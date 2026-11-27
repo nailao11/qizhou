@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application' version '8.7.3'
+}
+
+android {
+    namespace 'com.anqu.ssh'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+
+    defaultConfig {
+        applicationId 'com.anqu.ssh'
+        minSdk 26
+        targetSdk 35
+        versionCode 6
+        versionName '0.3.0'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packaging {
+        resources {
+            merges += ['META-INF/LICENSE.txt', 'META-INF/NOTICE.txt']
+            excludes += ['META-INF/versions/**', 'META-INF/INDEX.LIST']
+        }
+    }
+}
+
+dependencies {
+    implementation 'commons-net:commons-net:3.13.0'
+    implementation 'com.github.mwiede:jsch:2.28.8'
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.84'
+    testImplementation 'junit:junit:4.13.2'
+}
